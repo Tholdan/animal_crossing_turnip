@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>Turnip statistics</title>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+            <script type="text/javascript" src="{% static 'js/turnip.js' %}"></script>
+            <script type="text/javascript" src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+
+            <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/turnip.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/nice-select.css' %}">
+        </head>
+    <body>
+        <div id="content">
+            <div id="content-header" hidden>
+                <div class="tab selected-tab" id="chart-tab"><div class="tab-text">Chart</div></div>
+                <div class="add"><a href="/admin"><img src="{% static 'images/add_icon.png' %}" alt="add"/></a></div>
+            </div>
+            <div id="content-main">
+                <select id="week-selector" name="Week" title="Week">
+                    {% for week in weeks %}
+                        <option value="{{ week.id }}" {% if forloop.last %}selected{% endif %}>Week {{ week.week }}</option>
+                    {% endfor %}
+                </select>
+                <div class="add"><a href="/admin" target="_blank"><img src="{% static 'images/add_icon.png' %}" alt="add"/></a></div>
+                <div id="content-main-chart">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

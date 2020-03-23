@@ -1,0 +1,52 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: url("/static/images/background_image.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#content {
+    padding: 10px 50px;
+}
+
+#content-header div {
+    display: inline-block;
+}
+
+.tab {
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
+
+#content-header .selected-tab {
+    background-color: #59A559;
+    color: white;
+}
+
+.tab-text {
+    margin: 10px 20px 10px 20px;
+}
+
+.add {
+    float: right;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+.add img {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+#content-main {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+}
